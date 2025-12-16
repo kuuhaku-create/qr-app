@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ヘッダー（表示用） -->
+  <header class="header">
+    <h1>QRコード一覧</h1>
+  </header>
+  <div class="app">
+
+    <!-- メイン -->
+    <main class="content">
+
+      <div id="menu">
+        <button onclick="showQR('pika')">ピカチュウ</button>
+        <button onclick="showQR('charizard')">リザードン</button>
+      </div>
+
+      <div id="qrArea" style="display:none;">
+        <img id="qrImage">
+        <button onclick="back()">戻る</button>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- JSはbodyの一番下 -->
+  <script src="script.js"></script>
+</body>
+</html>
