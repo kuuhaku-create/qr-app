@@ -18,13 +18,42 @@
     <main class="content">
 
       <div id="menu">
-        <button onclick="showQR('pika')">ピカチュウ</button>
-        <button onclick="showQR('charizard')">リザードン</button>
+        <button onclick="showQR('fure')">フレンドピック</button>
+        <button onclick="showQR('pika')">
+          <span class="label">ピカチュウ</span>
+
+          <span class="icons">
+            <img src="type/denki.png" class="type-icon">
+          </span>
+        </button>
+        <button onclick="showQR('rukario')">
+          <span class="label">ピカチュウ</span>
+
+          <span class="icons">
+            <img src="type/kaku.png" class="type-icon">
+            <img src="type/hagane.png" class="type-icon">
+          </span>
+        </button>
+        <button onclick="showQR('ruga')">
+          <span class="label">ルガルガン</span>
+
+          <span class="icons">
+            <img src="type/iwa.png" class="type-icon">
+          </span>
+        </button>
+        <button onclick="showQR('sunano')">
+          <span class="label">スナノケガワ</span>
+
+          <span class="icons">
+            <img src="type/denki.png" class="type-icon">
+            <img src="type/zimen.png" class="type-icon">
+          </span>
+        </button>
       </div>
 
       <div id="qrArea" style="display:none;">
         <img id="qrImage">
-        <button onclick="back()">戻る</button>
+        <button class="back-btn" onclick="back()">戻る</button>
       </div>
 
     </main>
