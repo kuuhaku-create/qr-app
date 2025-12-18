@@ -59,19 +59,32 @@ button:active {
 
 button {
   width: 100%;
-  min-height: 48px;
-  margin: 12px 0;
+  max-width: 520px;
+  min-height: 72px;
+  margin: 12px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   font-size: 16px;
   font-weight: bold;
 
-  display: flex;
-  align-items: center;        /* ← 縦中央揃え */
-  justify-content: space-between;
+  border-radius: 14px;
+  border: 1px solid #333;
 
-  border: none;
-  border-radius: 12px;
-  background: #4f46e5;
+  background: linear-gradient(
+    135deg,
+    #1e293b,   /* 濃紺 */
+    #0f172a
+  );
+  border: 1px solid #334155;
   color: white;
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.15) inset;
 }
 
 
