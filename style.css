@@ -27,7 +27,7 @@ button:active {
 
 .header h1 {
   margin: 0;
-  font-size: 18px;
+  font-size: 29px;
 }
 
 .content {
@@ -67,7 +67,7 @@ button {
   align-items: center;
   justify-content: space-between;
 
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 
   border-radius: 14px;
