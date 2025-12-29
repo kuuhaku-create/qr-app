@@ -8,6 +8,14 @@
 </head>
 
 <body>
+  <div class="login-wrapper">
+    <form id="loginForm" class="login-card">
+      <label>パスワード</label>
+      <input id="passwordInput" type="password" inputmode="numeric" autocomplete="off">
+      <button type="submit" id="loginButton">ログイン</button>
+      <div id="errorMessage"></div>
+    </form>
+  </div>
   <!-- ヘッダー（表示用） -->
   <header class="header">
     <h1>QRコード一覧</h1>
@@ -58,7 +66,7 @@
         </button>
       </div>
 
-      <div id="qrArea" style="display:none;">
+      <div id="qrArea">
         <img id="qrImage">
         <button class="back-btn" onclick="back()">戻る</button>
       </div>

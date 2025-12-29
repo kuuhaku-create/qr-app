@@ -3,11 +3,6 @@ body {
   background: #f0f0f0;
 }
 
-button:active {
-  transform: scale(0.98);
-  opacity: 0.9;
-}
-
 .header {
   position: sticky;
   top: 0;
@@ -16,13 +11,14 @@ button:active {
   width: 100%;
   margin: 0 auto;          /* ← これを追加 */
 
-  background: white;
+  background: #f7f8fa;
   padding: 12px 16px;
   border-bottom: 1px solid #ddd;
   text-align: center;
 
   z-index: 10;
   box-sizing: border-box;
+  display: none;
 }
 
 .header h1 {
@@ -40,14 +36,19 @@ button:active {
   max-width: 390px;
   min-height: 100vh;
   margin: 0 auto;
-  background: white;
+  background: #f7f8fa;
   padding: 0;
+  display: none;
 }
 
 #qrArea {
   display: none;
   text-align: center;
   margin-top: 40px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 #qrImage {
@@ -73,11 +74,7 @@ button {
   border-radius: 14px;
   border: 1px solid #333;
 
-  background: linear-gradient(
-    135deg,
-    #1e293b,   /* 濃紺 */
-    #0f172a
-  );
+  background: #1e293b;
   border: 1px solid #334155;
   color: white;
 }
@@ -85,8 +82,8 @@ button {
 button:active {
   transform: scale(0.97);
   box-shadow: 0 0 0 3px rgba(255,255,255,0.15) inset;
+  opacity: 0.9; /* もしopacityも必要なら追加 */
 }
-
 
 .type-icon {
   display: block; 
@@ -102,4 +99,65 @@ button:active {
 .back-btn {
   display: block;     /* flex を解除 */
   text-align: center;
+}
+
+#errorMessage {
+  color: #d32f2f;          /* 文字色を赤に */
+  font-weight: bold;   /* 太字にして目立たせる */
+  margin-bottom: 12px;     /* 上に少し余白をつける */
+  text-align: center;  /* 中央揃えにしたい場合 */
+
+  min-height: 24px;        /* 高さ固定 */
+  line-height: 24px;       /* 文字の行高さを固定 */
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+.login-card {
+  width: 280px;
+  min-height: 200px; /* エラー表示時も高さを安定させるため */
+  background: linear-gradient(
+    135deg,
+    #0b1f33 0%,    /* 左端：濃紺 */
+    #99bbcc 50%,   /* 中央：明るめの水色っぽい色 */
+    #0b1f33 100%   /* 右端：濃紺 */
+  );
+  color: #fff;
+  border-radius: 12px;
+  padding: 52px 24px 24px 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-card label {
+  font-size: 18px;
+}
+
+.login-card input,
+.login-card button {
+  height: 40px;
+  font-size: 18px;
+}
+
+.login-card button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qrArea.show {
+  opacity: 1;
+  transform: translateY(0);
 }
